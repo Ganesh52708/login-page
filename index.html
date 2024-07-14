@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN & SIGNUP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function showForm(form) {
+            document.getElementById('loginForm').style.display = form === 'login' ? 'block' : 'none';
+            document.getElementById('signupForm').style.display = form === 'signup' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body onload="showForm('login')">
+    <div class="container">
+        <div class="form_main">
+            <div id="loginForm">
+                <p class="heading">LOGIN</p>
+                <form action="/login" method="post">
+                    <div class="inputContainer">
+                        <label class="sub_title" for="email"></label>
+                        <input placeholder="Enter your Email" id="username" class="inputField" name="email" type="email">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="sub_title" for="password"></label>
+                        <input placeholder="Password" id="password" class="inputField" name="password" type="password">
+                    </div>
+                    <button id="button" type="submit">Submit</button>
+                    <div class="signupContainer">
+                        <p>Don't have an account?</p>
+                        <a href="javascript:void(0)" onclick="showForm('signup')">Sign up</a>
+                    </div>
+                </form>
+            </div>
+            <div id="signupForm" style="display:none;">
+                <p class="heading">SIGNUP</p>
+                <form action="/signup" method="post">
+                    <div class="inputContainer">
+                        <label class="sub_title" for="name"></label>
+                        <input placeholder="Enter your Name" id="name" class="inputField" name="name" type="text">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="sub_title" for="email"></label>
+                        <input placeholder="Enter your Email" id="email" class="inputField" name="email" type="email">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="sub_title" for="password"></label>
+                        <input placeholder="Password" id="password" class="inputField" name="password" type="password">
+                    </div>
+                    <button id="button" type="submit">Submit</button>
+                    <div class="signupContainer">
+                        <p>Already have an account?</p>
+                        <a href="javascript:void(0)" onclick="showForm('login')">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
